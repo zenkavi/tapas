@@ -38,11 +38,12 @@ output.signal.y_source = DCM.Y.y(:);
 if strcmp(options.type,'s')
     
     % noise-free signal
-    DCMs = tapas_rdcm_generate(DCM, options, Inf);
-    output.signal.y_clean = DCMs.Y.y(:);
+    fprintf("Skipping noise free signal creation\n")
+%     DCMs = tapas_rdcm_generate(DCM, options, Inf);
+%     output.signal.y_clean = DCMs.Y.y(:);
     
     % compute the MSE of the noisy data
-    output.residuals.y_mse_clean = mean((output.signal.y_source - output.signal.y_clean).^2);
+%     output.residuals.y_mse_clean = mean((output.signal.y_source - output.signal.y_clean).^2);
     
 else
     

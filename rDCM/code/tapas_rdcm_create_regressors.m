@@ -74,7 +74,8 @@ if ( ~isfield(DCM.U,'X0') )
         DCM.U.X0      = ones(size(DCM.U.u,1),1);
         options.filtu = 1;
     else
-        DCM.U.X0      = zeros(size(DCM.U.u,1),0);
+%         DCM.U.X0      = zeros(size(DCM.U.u,1),0);
+        DCM.U.X0      = zeros(size(DCM.U.u,1),1); %AZE 03/03/21
         options.filtu = 0;
     end
     

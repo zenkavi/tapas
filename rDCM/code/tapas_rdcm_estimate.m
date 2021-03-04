@@ -71,7 +71,8 @@ currentTimer = tic;
 if ( ~isfield(DCM,'c') || isempty(DCM.c) || ~isfield(DCM,'U') || isempty(DCM.U.u) || strcmp(DCM.U.name{1},'null') )
     
     % specify empty driving input
-    DCM.U.u     = zeros(size(DCM.Y.y,1)*16, 1);
+%     DCM.U.u     = zeros(size(DCM.Y.y,1)*16, 1);
+    DCM.U.u     = zeros(size(DCM.Y.y,1)*16, size(DCM.Y.y,2)); %AZE 03/03/21
     DCM.U.name  = {'null'};
     DCM.U.dt    = DCM.Y.dt/16;
     
